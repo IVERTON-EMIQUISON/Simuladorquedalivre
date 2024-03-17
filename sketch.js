@@ -114,9 +114,27 @@ function DownloadExcel() {
   function exportToCSV(tableData, filename) {
     let csvContent = "data:text/csv;charset=utf-8,";
 
-    // Cria as linhas do arquivo CSVbh
+    // Adiciona a linha com o valor de g
+    csvContent += "\rg=" + constanteG+ "\n";
+
+    // Adiciona a linha com os cabeçalhos
+    csvContent += "t y v\r\n";
+
+    // Função para formatar números com vírgula e espaços
+    function formatNumber(num) {
+      return num.toString().replace(".", ",");
+    }
+
+    // Cria as linhas do arquivo CSV
     tableData.forEach(row => {
-      let csvRow = row.join(" , ");
+      let csvRow = row.map(cell => {
+        // Verifica se o valor é um número e formata com vírgula e espaços
+        if (!isNaN(cell)) {
+          return formatNumber(cell);
+        }
+        return cell;
+      }).join("\t");
+
       csvContent += csvRow + "\r\n";
     });
 

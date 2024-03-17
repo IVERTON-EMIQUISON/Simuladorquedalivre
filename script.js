@@ -4,7 +4,7 @@ let latitude, altitude, altura;
 
 function abrirModal() {
     var modal = document.getElementById("myModal");
-    modal.style.display = "block";
+    modal.style.display = "block"; 
 }
 
 // Adicione essa função para fechar o modal
