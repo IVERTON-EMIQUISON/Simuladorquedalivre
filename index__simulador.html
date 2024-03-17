@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/addons/p5.sound.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="/css/simulador/style.css">
+  <meta charset="utf-8" />
+  <title>Queda Livre</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="/css/simulador/reserte.css">
+  <link rel="stylesheet" href="/css/simulador/styles.css">
+   <link rel="stylesheet" href="/css/simulador/cabeçalho.css">
+</head>
+
+<body>
+  <div id="scatter-plot"></div>
+ 
+  <div id="meuModal">
+    <div class="modal-conteudo">
+      <p id="textoModal"></p>
+    </div>
+  </div>
+
+  <script src="./sketch.js"></script>
+  <script src="./script.js"></script>
+  
+  <header class="cabecalho">
+    <img src="./img/ufersa.png" class="logo">
+    <div class="titulo">
+      <h1> Laboratório virtual de Fisíca</h1>
+      <h2>Simulador de Queda Livre</h2>
+    </div>
+
+    <div class="nave_button">
+      <a href="questionario/index__Quet.html">
+        <button class=" nave_list_button">Questionário</button>
+      </a>
+      <a href="./index.html">
+        <button class=" nave_list_button">Sair</button>
+      </a>
+    </div>
+
+  </header>
+  
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="fecharModal()">&times;</span>
+        <div class="texto">
+          
+        <p> <h1> Bem-vindo ao Simulador de Queda Livre! </h1><br><br>
+          A queda livre é um conceito fundamental na física, descrevendo o movimento de um objeto sob a influência exclusiva da gravidade. Este simulador foi desenvolvido com o propósito de proporcionar uma compreensão visual e prática desse fenômeno essencial.
+          <br><br><h3>Funcionalidade</h3><br>
+          Os usuários podem inserir as coordenadas como latitude e altitude locais, além da altura inicial de onde o objeto será solto. Essas informações são cruciais para calcular a aceleração da gravidade específica daquele local, garantindo uma simulação precisa.
+
+        </p>
+    </div>
+        </div>
+</div>
+  
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <title>Sombra no Canvas</title>
+</head>
+
+<body>
+    <div id="scatter-plot"></div>
+
+   
+   
+    <script src="..//sketch.js">
+     
+        var y = tempo;
+        
+
+        // Configuração do gráfico
+        var margin = { top: 20, right: 20, bottom: 30, left: 40 },
+            width = 400 - margin.left - margin.right,
+            height = 300 - margin.top - margin.bottom;
+
+        var svg = d3.select("#scatter-plot")
+            .append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+        // Escalas
+        var x = d3.scaleLinear().domain([0, d3.max(distancia)]).range([0, width]);
+        var yScale = d3.scaleLinear().domain([0, d3.max(y)]).range([height, 0]);
+        var sizeScale = d3.scaleLinear().domain([0, d3.max(terceiroValor)]).range([5, 20]); // Escala de tamanho dos pontos
+
+        // Eixos
+        var xAxis = d3.axisBottom(x);
+        var yAxis = d3.axisLeft(yScale);
+
+        // Desenhar pontos no gráfico
+        svg.selectAll("circle")
+            .data(distancia)
+            .enter()
+            .append("circle")
+            .attr("cx", function (d) { return x(d); })
+            .attr("cy", function (d, i) { return yScale(y[i]); })
+            .attr("r", function (d, i) { return sizeScale(terceiroValor[i]); });
+
+        // Adicionar uma linha de regressão
+        var regression = d3.line()
+            .x(function (d) { return x(d); })
+            .y(function (d, i) { return yScale(y[i]); });
+
+        svg.append("path")
+            .datum(distancia)
+            .attr("class", "line")
+            .attr("d", regression);
+
+        // Adicionar eixos
+        svg.append("g")
+            .attr("class", "x axis")
+            .attr("transform", "translate(0," + height + ")")
+            .call(xAxis);
+
+        svg.append("g")
+            .attr("class", "y axis")
+            .call(yAxis);
+    </script>
+
+
+</body>
+
+</html>
