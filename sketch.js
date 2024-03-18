@@ -58,8 +58,13 @@ function draw() {
 
     alturamin = 0;//valores da tela em pixel
     alturamax = height;//valores da tela em pixel
-
+    
     y = y0 + velocidade_inicial + 0.5 * constanteG * tempo ** 2;
+     // Adicione um valor aleatório entre -3 e 0 a y
+     let y_delta = (Math.random() * 6 - 3) * 0.0001;
+    console.log("valor de y_delta = "+ y_delta + " \tvalo de y = "+ y);
+    y += y_delta;
+    
     yc = alturamin + y * (alturamax - alturamin) / hmax;
 
     velocidade_final = constanteG * tempo; // velocidade 
