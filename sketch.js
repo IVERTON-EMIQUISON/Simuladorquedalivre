@@ -32,10 +32,9 @@ function preenncher_tabela() {
   globalTableData.push(rowData); //Update do array
 }
 
-
 function draw() {
   background(imag1);
-
+   
   let imgaltura = slider.value();
 
   if (imgaltura >= 550) {
@@ -61,7 +60,7 @@ function draw() {
     
     y = y0 + velocidade_inicial + 0.5 * constanteG * tempo ** 2;
      // Adicione um valor aleatório entre -3 e 0 a y
-     let y_delta = (Math.random() * 6 - 3) * 0.0001;
+    let y_delta = random(-3, 3) * 0.005 ;
     console.log("valor de y_delta = "+ y_delta + " \tvalo de y = "+ y);
     y += y_delta;
     
@@ -123,7 +122,7 @@ function DownloadExcel() {
     csvContent += "\rg=" + constanteG+ "\n";
 
     // Adiciona a linha com os cabeçalhos
-    csvContent += "t y v\r\n";
+    csvContent += "T D V\r\n";
 
     // Função para formatar números com vírgula e espaços
     function formatNumber(num) {

@@ -38,10 +38,6 @@ function setup() {
     limpa.position(windowWidth - 570, windowHeight - 230);
     limpa.mouseClicked(limpar);
 
-    input2 = createInput();
-    input2.position(windowWidth-313, windowHeight- 265); 
-    input2.attribute('placeholder', 'Digite a altura do prédio');
-
     let exporta = createImg("./img/expotar.png");
     exporta.addClass("button")
     exporta.position(windowWidth - 520, windowHeight - 230);
@@ -52,14 +48,14 @@ function setup() {
 
  // valores mínimos, máximos e iniciais
 } 
- 
 
 var entrada;
 function validar() {
-   
+    hmax = random(15,35);
+    console.log("valor altura "+ hmax);
+
     latitude = input.value();
     altitude = input1.value();
-    hmax = input2.value();
    
     if (latitude === null && latitude === " ") {
         entrada.html("Digite um valor válido para a latitude.");
@@ -76,16 +72,6 @@ function validar() {
     } 
     else if (isNaN(altitude)) { //Validar a entrada 
         entrada.html("Digite um valor válido para a altitude.");
-        return;
-    }
-    
-    if (hmax === null && hmax === " ") {
-        entrada.html("Digite um valor válido para a altura do prédio.");
-        return;
-    }
-    
-    if (isNaN(hmax)) { //Validar a entrada 
-        entrada.html("Digite um valor válido para altura do prédio.");
         return;
     }
     
