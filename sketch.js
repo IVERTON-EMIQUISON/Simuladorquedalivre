@@ -96,9 +96,9 @@ function draw() {
   let xVelocidade = 575;
 
   // Desenhando os títulos
-  text("Tempo (m/s)", xTempo, 40);
-  text("Distância (m)", xDistancia, 40);
-  text("Velocidade (m/s)", xVelocidade, 40);
+  text("Time (m/s)", xTempo, 40);
+  text("Position (m)", xDistancia, 40);
+  text("Velocity (m/s)", xVelocidade, 40);
 
   let espacamento = 30;
 
