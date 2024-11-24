@@ -32,15 +32,20 @@
       <h2>Simulador de Queda Livre</h2>
     </div>
 
-    <div class="nave_button">
-      <a href="https://docs.google.com/forms/d/14-xYR4yeY_3DhdWMmHC675UGWkhtRaABLvkFg5B2HEQ/viewform?edit_requested=true">
-        <button class="nave_list_button">Submeter-Dados</button>
-      </a>
-      
-      <a href="http://3.208.183.48:8080/">
-        <button class=" nave_list_button">Sair</button>
-      </a>
-    </div>
+    <div class="menu-container">
+      <!-- Botão do menu -->
+      <div class="menu-button" onclick="toggleDropdown()">
+          <img src="https://cdn-icons-png.flaticon.com/512/1828/1828859.png" alt="Menu Ícone">
+          <span>menu</span>
+      </div>
+
+      <!-- Menu suspenso -->
+      <div class="dropdown" id="dropdown-menu">
+          <a href="https://docs.google.com/forms/d/12PUF3jMdkmhNbPaDng6j8gE8DEZm4LcIQcsT5qf_Y2E/edit">Submeter Dados</a>
+          <a href="http://127.0.0.1:8000/index_quest.html">Questionários</a>
+          <a href="http://127.0.0.1:8000/">Sair</a>
+      </div>
+  </div>
 
   </header>
   

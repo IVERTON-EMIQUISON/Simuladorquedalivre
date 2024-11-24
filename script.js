@@ -97,3 +97,22 @@ function calculateGravity(latitude, altitude) {
     
 
 }
+
+      //função d botão de navegação 
+      function toggleDropdown() {
+        const dropdown = document.getElementById('dropdown-menu');
+        if (dropdown.style.display === 'block') {
+            dropdown.style.display = 'none';
+        } else {
+            dropdown.style.display = 'block';
+        }
+    }
+
+    // Fecha o dropdown ao clicar fora dele
+    window.onclick = function(event) {
+        const dropdown = document.getElementById('dropdown-menu');
+        const button = document.querySelector('.menu-button');
+        if (event.target !== button && !button.contains(event.target)) {
+            dropdown.style.display = 'none';
+        }
+    };
