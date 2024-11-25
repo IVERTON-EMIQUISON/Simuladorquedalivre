@@ -73,14 +73,16 @@ h2 {
 }
     .menu-container {
         position: relative;
-        margin-left: 20PX;
+        margin-left: 30PX;
+        padding-left: 50px;
+        
     }
 
     .menu-button {
         background: #fff;
-        border: 2px solid #ff69b4;
+        border: 2px;
         border-radius: 10px;
-        padding: 10px 20px;
+        padding: 10px 50px;
         cursor: pointer;
         text-align: center;
         display: flex;
@@ -88,6 +90,7 @@ h2 {
         justify-content: center;
         flex-direction: column;
         transition: background-color 0.3s;
+        margin-top: 0px;
     }
 
     .menu-button img {
@@ -108,7 +111,7 @@ h2 {
         background: #27293d;
         border: 1px solid #ff69b4;
         border-radius: 5px;
-        margin-top: 10px;
+        margin-top: 30px;
         width: 150px;
         z-index: 1000;
     }
@@ -116,6 +119,7 @@ h2 {
     .dropdown a {
         display: block;
         padding: 10px;
+        padding-right: 0px;
         color: #fff;
         text-decoration: none;
         border-bottom: 1px solid #ff69b4;
